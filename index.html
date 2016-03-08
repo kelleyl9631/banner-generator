@@ -6,16 +6,40 @@
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>
           $(function(){
-              
+              $('button').click(function(){
+                $('#banner').fadeIn(2000);
+                $('#userInputs').fadeOut(200)
+              });
           });
          
          
          
       </script>
+      
+      <style type="text/css">
+        body{
+          background-color: black;
+        }
+        h2{
+          font-family: ;
+          color: turquoise;
+        }
+        #userInputs{
+          color: lightBlue;
+        }
+
+      </style>
       </head>
   <body>
+        
+    <div id="banner" style="display: none;">
+      <h1></h1>
+      <h4></h4>
+      <p></p>
+    </div>
+
     <div id="userInputs">
-      <h1>Create Your Own Banner</h1>
+      <h2>Create Your Own Banner</h2>
       Name: <input id='name' type="text" name="name"/>
       <br>
       Age: <input id='age' type="text" name="age"/>
@@ -32,6 +56,17 @@
           <option id='sporty'>Sporty</option>
         </select>
         <br>
+      Background:
+        <select id='theme'>
+          <option>Pick a theme</option>
+          <option id='classy'>classy</option>
+          <option id='flowers'>flowers</option>
+          <option id='paper'>paper</option>
+          <option id='car'>car</option>
+          <option id='balls'>balls</option>
+        </select>
+        <br>
+
         <button>Create Banner!!!</button>
     </div>
 
