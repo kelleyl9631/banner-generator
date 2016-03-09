@@ -7,8 +7,23 @@
         <script>
           $(function(){
               $('button').click(function(){
+                var name = $('#name').val();
+                var age = $('#age').val();
+                var future = $('#future').val();
+                var line = $('#line').val();
+                var theme = $('#theme').val();
+                var back = $('#background').val();
+                var ac = age + ", " + future;
+                
                 $('#banner').fadeIn(2000);
-                $('#userInputs').fadeOut(200)
+                
+                $('#userInputs').fadeOut(200);
+                $('h1').html(name);
+                $('h4').html(ac);
+                $('p').html(line);
+              });
+              $('#girly').select(function(){
+                $('#banner').css('color','pink')
               });
           });
          
@@ -19,15 +34,19 @@
       <style type="text/css">
         body{
           background-color: black;
+          font-family: "Comic Sans MS";
         }
+        
         h2{
-          font-family: ;
+          font-family: "Book Antiqua";
           color: turquoise;
         }
         #userInputs{
           color: lightBlue;
         }
-
+        #banner{
+          color: white;
+        }
       </style>
       </head>
   <body>
@@ -46,22 +65,22 @@
       <br>
       Future Career: <input id='future' type="text" name="future"/>
       <br>
+      Favorite Quote or Lyric: <input id='line' type="text" name="line"/>
+      <br>
       Theme: 
         <select id='theme'>
           <option>Pick a theme</option>
           <option id='classic'>Classic</option>
           <option id='girly'>Girly</option>
-          <option id='hw'>Handwritten</option>
           <option id='cars'>Cars</option>
           <option id='sporty'>Sporty</option>
         </select>
         <br>
       Background:
-        <select id='theme'>
-          <option>Pick a theme</option>
+        <select id='background'>
+          <option>Pick a background image</option>
           <option id='classy'>classy</option>
           <option id='flowers'>flowers</option>
-          <option id='paper'>paper</option>
           <option id='car'>car</option>
           <option id='balls'>balls</option>
         </select>
