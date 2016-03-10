@@ -1,93 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jQuery Template</title>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>
-          $(function(){
-              $('button').click(function(){
-                var name = $('#name').val();
-                var age = $('#age').val();
-                var future = $('#future').val();
-                var line = $('#line').val();
-                var theme = $('#theme').val();
-                var back = $('#background').val();
-                var ac = age + ", " + future;
-                
-                $('#banner').fadeIn(2000);
-                
-                $('#userInputs').fadeOut(200);
-                $('h1').html(name);
-                $('h4').html(ac);
-                $('p').html(line);
-              });
-              $('#girly').select(function(){
-                $('#banner').css('color','pink')
-              });
-          });
-         
-         
-         
-      </script>
-      
-      <style type="text/css">
-        body{
-          background-color: black;
-          font-family: "Comic Sans MS";
-        }
+
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Template</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src='spectrum.js'></script>
+  <script>
+    $(function() {
+      $('button').click(function() {
+        var name = $('#name').val();
+        var age = $('#age').val();
+        var future = $('#future').val();
+        var line = $('#line').val();
+        var ac = age + ", " + future;
+
+        $('h1').html(name);
+        $('h4').html(ac);
+        $('p').html(line);
+
+        $('#banner').fadeIn(2000);
+
+        $('#userInputs').fadeOut(200);
         
-        h2{
-          font-family: "Book Antiqua";
-          color: turquoise;
-        }
-        #userInputs{
-          color: lightBlue;
-        }
-        #banner{
-          color: white;
-        }
-      </style>
-      </head>
-  <body>
-        
-    <div id="banner" style="display: none;">
-      <h1></h1>
-      <h4></h4>
-      <p></p>
-    </div>
+      var backImage = $('#background').val();
+      $('#banner').css('background-image', 'url(' + backImage + ')');
+      $('#banner').css('text-shadow', '2px 2px 5px black');
+    
+      });
 
-    <div id="userInputs">
-      <h2>Create Your Own Banner</h2>
-      Name: <input id='name' type="text" name="name"/>
-      <br>
-      Age: <input id='age' type="text" name="age"/>
-      <br>
-      Future Career: <input id='future' type="text" name="future"/>
-      <br>
-      Favorite Quote or Lyric: <input id='line' type="text" name="line"/>
-      <br>
-      Theme: 
-        <select id='theme'>
-          <option>Pick a theme</option>
-          <option id='classic'>Classic</option>
-          <option id='girly'>Girly</option>
-          <option id='cars'>Cars</option>
-          <option id='sporty'>Sporty</option>
-        </select>
-        <br>
-      Background:
-        <select id='background'>
-          <option>Pick a background image</option>
-          <option id='classy'>classy</option>
-          <option id='flowers'>flowers</option>
-          <option id='car'>car</option>
-          <option id='balls'>balls</option>
-        </select>
-        <br>
+      var color1 = $('#color1').val();
+      var color2 = $('#color2').val();
+      var color3 = $('#color3').val();
+      $('h1').css('color', color1);
+      $('h4').css('color', color2);
+      $('p').css('color', color3);
 
-        <button>Create Banner!!!</button>
-    </div>
 
-  </body>
+
+
+    });
+  </script>
+
+  <style type="text/css">
+    body {
+      background-color: black;
+      font-family: "Comic Sans MS";
+    }
+    
+    h2 {
+      font-family: "Book Antiqua";
+      color: turquoise;
+    }
+    
+    #userInputs {
+      color: lightBlue;
+    }
+    h1 p{
+      text-shadow: 2px 2px;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div id="banner" style="display: none; text-align: center;">
+    <h1></h1>
+    <h4></h4>
+    <p></p>
+  </div>
+
+  <div id="userInputs">
+    <h2>Create Your Own Banner</h2> Name:
+    <input id='name' type="text" name="name" />
+    <br> Age:
+    <input id='age' type="text" name="age" />
+    <br> Future Career:
+    <input id='future' type="text" name="future" />
+    <br> Favorite Quote or Lyric:
+    <input id='line' type="text" name="line" />
+    <br> Favorite Colors:
+    <input type="color" id="color1" value="#cc99ff" />
+    <input type="color" id="color2" value="#00b3b3" />
+    <input type="color" id="color3" value="#adc2eb" />
+    <br> Background:
+    <select id='background'>
+      <option>Pick a background image</option>
+      <option id='food' value="images/food.png">food</option>
+      <option id='flowers' value="images/floral.png">flowers</option>
+      <option id='car' value="images/car.png">car</option>
+      <option id='balls' value="images/sports.png">balls</option>
+    </select>
+    <br>
+
+    <button>Create Banner!!!</button>
+  </div>
+
+</body>
+
 </html>
