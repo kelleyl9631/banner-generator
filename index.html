@@ -12,29 +12,34 @@
   <script>
     $(function() {
       $('#create').click(function() {
+        //set user inputs into variables
         var name = $('#name').val();
         var age = $('#age').val();
         var future = $('#future').val();
         var line = $('#line').val();
         var ac = age + ", " + "Future " + future;
-
-        $('h1').html(name);
+        
+        //set user inputs on the banner when button is clicked
+        $('h1').html(name); 
         $('h3').html(ac);
         $('p').html(line);
 
+        //when button is clicked, the banner will fade in 
         $('#banner').fadeIn(2000);
-
+        //when button is clicked, the user input div will disappear
         $('#userInputs').fadeOut(200);
-        
+      
+      //based on which option the user chooses for the background
       var backImage = $('#background').val();
+      //the background will be set to the image attached that choice the user picked
       $('#banner').css('background-image', 'url(' + backImage + ')');
       $('#banner').css('text-shadow', '2px 2px 5px black');
     
-
+      //set user inputs into variables
       var color1 = $('#color1').val();
       var color2 = $('#color2').val();
       var color3 = $('#color3').val();
-
+      //sets the text color to the color chosen
       $('h1').css('color', color1);
       $('h3').css('color', color2);
       $('p').css('color', color3);
@@ -44,7 +49,6 @@
   });
     });
   </script>
-
   <style type="text/css">
     body {
       background-color: black;
@@ -85,7 +89,8 @@
 
 
 <body>
-  <div id="banner" style="display: none; text-align: center;">
+  <!--hides the banner until button is clicked-->
+  <div id="banner" style="display: none; text-align: center;"> 
     <h1></h1>
     <h3></h3>
     <p></p>
@@ -101,10 +106,12 @@
     <br> Favorite Quote or Lyric: (optional)
     <input id='line' type="text" name="line" />
     <br> Favorite Colors:
+    <!--color boxes inputs-->
     <input type="color" id="color1" value="#cc99ff" />
     <input type="color" id="color2" value="#00b3b3" />
     <input type="color" id="color3" value="#adc2eb" />
     <br> Background:
+    <!--background drop down menu-->
     <select id='background'>
       <option>Pick a background image</option>
       <option id='food' value="images/food.png">food</option>
