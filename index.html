@@ -5,18 +5,21 @@
   <meta charset="UTF-8">
   <title>jQuery Template</title>
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script src='spectrum.js'></script>
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700' rel='stylesheet' type='text/css'>
+
   <script>
     $(function() {
-      $('button').click(function() {
+      $('#create').click(function() {
         var name = $('#name').val();
         var age = $('#age').val();
         var future = $('#future').val();
         var line = $('#line').val();
-        var ac = age + ", " + future;
+        var ac = age + ", " + "Future " + future;
 
         $('h1').html(name);
-        $('h4').html(ac);
+        $('h3').html(ac);
         $('p').html(line);
 
         $('#banner').fadeIn(2000);
@@ -27,18 +30,18 @@
       $('#banner').css('background-image', 'url(' + backImage + ')');
       $('#banner').css('text-shadow', '2px 2px 5px black');
     
-      });
 
       var color1 = $('#color1').val();
       var color2 = $('#color2').val();
       var color3 = $('#color3').val();
+
       $('h1').css('color', color1);
-      $('h4').css('color', color2);
+      $('h3').css('color', color2);
       $('p').css('color', color3);
+      
 
 
-
-
+  });
     });
   </script>
 
@@ -49,15 +52,32 @@
     }
     
     h2 {
-      font-family: "Book Antiqua";
+      font-family: 'Sigmar One', cursive;
       color: turquoise;
     }
     
     #userInputs {
       color: lightBlue;
     }
-    h1 p{
-      text-shadow: 2px 2px;
+    h1 h3 p{
+      text-shadow: 20px 20px;
+    }
+    h1{
+      font-size: 40px;
+      font-family: 'Cinzel Decorative', cursive;
+    }
+    h3{
+      font-size: 25px;
+      font-family: 'Permanent Marker', cursive;
+    }
+    
+    p{
+      font-size: 20px;
+    }
+    
+    #banner {
+       background-repeat: no-repeat;
+       background-size: cover;
     }
   </style>
 </head>
@@ -67,18 +87,18 @@
 <body>
   <div id="banner" style="display: none; text-align: center;">
     <h1></h1>
-    <h4></h4>
+    <h3></h3>
     <p></p>
   </div>
 
   <div id="userInputs">
-    <h2>Create Your Own Banner</h2> Name:
+    <h2>Create Your Own Banner</h2> Full Name:
     <input id='name' type="text" name="name" />
     <br> Age:
     <input id='age' type="text" name="age" />
     <br> Future Career:
     <input id='future' type="text" name="future" />
-    <br> Favorite Quote or Lyric:
+    <br> Favorite Quote or Lyric: (optional)
     <input id='line' type="text" name="line" />
     <br> Favorite Colors:
     <input type="color" id="color1" value="#cc99ff" />
@@ -94,7 +114,8 @@
     </select>
     <br>
 
-    <button>Create Banner!!!</button>
+    <button id="create">Create Banner!!!</button>
+    
   </div>
 
 </body>
